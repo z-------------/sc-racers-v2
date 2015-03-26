@@ -29,10 +29,8 @@ var newsStream = document.querySelector(".stream-container");
 
 /* twitter stream */
 
-xhr("https://dl.dropboxusercontent.com/u/57300365/SC%20Racers/Twitter/tweets.txt", function(r){
-    var posts = [];
-    r = r.split("\n \n ").reverse();
-    r.forEach(function(postStr){
+function displayTwitterPosts(data){
+    data.forEach(function(postStr){
         var postArr = postStr.split("\n").filter(function(v){
             return v.length > 0;
         });
@@ -53,4 +51,20 @@ xhr("https://dl.dropboxusercontent.com/u/57300365/SC%20Racers/Twitter/tweets.txt
         gutter: 20,
         isFitWidth: true
     });
-});
+}
+
+if (
+    localStorage.getItem("twitterStreamData") && 
+    (new Date().getTime() - Number(localStorage.getItem("twitterStreamTime")) < 600000 /* 10 minutes */)
+) {
+    displayTwitterPosts(JSON.parse(localStorage.getItem("twitterStreamData")));
+} else {
+    xhr("https://dl.dropboxusercontent.com/u/57300365/SC%20Racers/Twitter/tweets.txt", function(r){
+        r = r.split("\n \n ").reverse();
+
+        localStorage.setItem("twitterStreamData", JSON.stringify(r));
+        localStorage.setItem("twitterStreamTime", new Date().getTime().toString());
+
+        displayTwitterPosts(r);
+    });
+}
