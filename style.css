@@ -126,6 +126,7 @@ p, blockquote {
     flex-grow: 1;
     margin: 20px;
     padding: 20px;
+    overflow: hidden;
     
     color: #fff;
     background-image: url(//lorempixel.com/400/200/technics);
