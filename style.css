@@ -168,6 +168,7 @@ section > * {
 
 p, blockquote {
     margin: 10px 0;
+    line-height: 1.5;
 }
 
 .shadow, .card, .stream-container li, .flex-box {
@@ -176,6 +177,7 @@ p, blockquote {
 
 .flex-container {
     display: flex;
+    padding: 0 10px;
 }
 
 .flex-box {
@@ -203,6 +205,10 @@ p, blockquote {
     background-color: rgba(0, 0, 0, .5);
 }
 
+.flex-box.image-full {
+    flex-shrink: 0;
+}
+
 .flex-box:first-child {
     margin-left: 0;
 }
@@ -214,6 +220,15 @@ p, blockquote {
 .flex-box > * {
     position: relative;
     z-index: 1;
+}
+
+.flex-box.no-padding {
+    padding: 0;
+}
+
+.flex-box.image-fill img {
+    width: 100%;
+    float: left;
 }
 
 a.button {
@@ -284,11 +299,12 @@ p.subhead {
 .quote, blockquote {
     position: relative;
     margin-left: 20px;
+    color: rgba(0, 0, 0, .6);
 }
 
 .quote:before, blockquote:before {
     content: "“";
-    font-size: 2em;
+    font-size: 2.5em;
     color: rgba(0, 0, 0, .3);
     position: absolute;
     top: -0.5em;
