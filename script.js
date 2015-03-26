@@ -74,3 +74,37 @@ if (
 [].slice.call(document.querySelectorAll("[data-bg]")).forEach(function(elem){
     elem.style.backgroundImage = "url(" + elem.dataset.bg + ")";
 });
+
+/* section changing */
+
+function changeSection(id){
+    var section = document.querySelector("[data-id='" + id + "']");
+    var link = document.querySelector("nav a[href='#" + id + "']");
+    
+    if (section) {
+        [].slice.call(document.querySelectorAll("section")).forEach(function(elem){
+            elem.classList.remove("current");
+        });
+        section.classList.add("current");
+    } else {
+        console.log("couldn't find section '" + id + "'");
+    }
+    
+    if (link) {
+        [].slice.call(document.querySelectorAll("nav a")).forEach(function(elem){
+            elem.classList.remove("current");
+        });
+        link.classList.add("current");
+    }
+}
+
+addEventListener("hashchange", function(){
+    changeSection(location.hash.substring(1));
+});
+
+// check location hash on page load
+if (location.hash.length > 1) {
+    changeSection(location.hash.substring(1));
+} else {
+    changeSection(document.querySelector("section").dataset.id);
+}
