@@ -40,7 +40,7 @@ function displayTwitterPosts(data){
         var date = postArr[2];
         
         var postElem = document.createElement("li");
-        postElem.innerHTML = "<a href='" + url + "'><p>" + content + "</p><date>" + date + "</date></a>";
+        postElem.innerHTML = "<p>" + twttr.txt.autoLink(content) + "</p><a href='" + url + "'><date>" + date + "</date></a>";
         newsStream.appendChild(postElem);
     });
     [].slice.call(newsStream.querySelectorAll("a")).forEach(function(elem){
