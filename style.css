@@ -101,6 +101,7 @@ nav {
 nav a {
     display: inline-block;
     padding: 10px 15px;
+    color: #fff;
 }
 
 section {
@@ -120,14 +121,26 @@ p, blockquote {
 }
 
 .flex-box {
+    position: relative;
     border-radius: 4px;
     flex-grow: 1;
     margin: 20px;
     padding: 20px;
     
     color: #fff;
-    background-image: url(http://lorempixel.com/400/200/tech);
+    background-image: url(//lorempixel.com/400/200/technics);
     background-size: cover;
+}
+
+.flex-box:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, .5);
 }
 
 .flex-box:first-child {
@@ -138,6 +151,11 @@ p, blockquote {
     margin-right: 0;
 }
 
+.flex-box > * {
+    position: relative;
+    z-index: 1;
+}
+
 a.button {
     display: inline-block;
     padding: 10px 15px;
@@ -145,11 +163,11 @@ a.button {
     border: solid 1px #FF3539;
     border-radius: 4px;
     font-size: 0.9em;
+    color: #fff;
     
     transition-property: background, color;
 }
 
 a.button:hover {
     background-color: #FF3539;
-    color: #fff;
 }
