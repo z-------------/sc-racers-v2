@@ -1,0 +1,155 @@
+*, :before, :after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: none;
+    
+    transition-duration: .3s;
+    transition-property: none;
+    
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@-webkit-keyframes logoSpin {
+    from {
+        -webkit-transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(1turn);
+    }
+}
+
+@keyframes logoSpin {
+    from {
+        -webkit-transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(1turn);
+    }
+}
+
+body {
+    background-color: #f1f1f1;
+    font-family: "Open Sans", sans-serif;
+    font-size: 17px;
+}
+
+a {
+    color: #FF3539;
+}
+
+h2, h3, h4, h5, h6 {;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+    margin-bottom: 20px;
+    
+    background-color: #FF3539;
+    color: #fff;
+}
+
+.logo {
+    font-family: "Anton", sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 7em;
+    line-height: 1;
+    margin: 20px 0;
+}
+
+.logo:before {
+    content: "";
+    
+    display: inline-block;
+    vertical-align: middle;
+    width: 1.2em;
+    height: 1.2em;
+    
+    background-image: url(/assets/img/logo.svg);
+    
+    -webkit-transform-origin: calc(50% + 6px) 50%;
+    transform-origin: calc(50% + 6px) 50%;
+}
+
+.logo:hover:before {
+    -webkit-animation: logoSpin 1s;
+    animation: logoSpin 1s;
+}
+
+nav {
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+nav a {
+    display: inline-block;
+    padding: 10px 15px;
+}
+
+section {
+    padding: 50px;
+}
+
+p, blockquote {
+    margin: 10px 0;
+}
+
+.shadow {
+    box-shadow: 0 3px 0 rgba(0, 0, 0, .2), 0 1px 2px rgba(0, 0, 0, .2);
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-box {
+    border-radius: 4px;
+    flex-grow: 1;
+    margin: 20px;
+    padding: 20px;
+    
+    color: #fff;
+    background-image: url(http://lorempixel.com/400/200/tech);
+    background-size: cover;
+}
+
+.flex-box:first-child {
+    margin-left: 0;
+}
+
+.flex-box:last-child {
+    margin-right: 0;
+}
+
+a.button {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border: solid 1px #FF3539;
+    border-radius: 4px;
+    font-size: 0.9em;
+    
+    transition-property: background, color;
+}
+
+a.button:hover {
+    background-color: #FF3539;
+    color: #fff;
+}
