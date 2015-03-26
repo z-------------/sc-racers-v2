@@ -68,3 +68,9 @@ if (
         displayTwitterPosts(r);
     });
 }
+
+/* background images from markup */
+
+[].slice.call(document.querySelectorAll("[data-bg]")).forEach(function(elem){
+    elem.style.backgroundImage = "url(" + elem.dataset.bg + ")";
+});
