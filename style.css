@@ -112,6 +112,7 @@ nav a:hover {
 
 section {
     padding: 50px;
+    margin-top: -130px;
 }
 
 p, blockquote {
