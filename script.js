@@ -31,7 +31,7 @@ var newsStream = document.querySelector(".stream-container");
 
 xhr("https://dl.dropboxusercontent.com/u/57300365/SC%20Racers/Twitter/tweets.txt", function(r){
     var posts = [];
-    r = r.split("\n \n ");
+    r = r.split("\n \n ").reverse();
     r.forEach(function(postStr){
         var postArr = postStr.split("\n").filter(function(v){
             return v.length > 0;
@@ -44,5 +44,5 @@ xhr("https://dl.dropboxusercontent.com/u/57300365/SC%20Racers/Twitter/tweets.txt
         var postElem = document.createElement("li");
         postElem.innerHTML = "<p>" + content + "</p>";
         newsStream.appendChild(postElem);
-    })
+    });
 });
