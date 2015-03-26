@@ -136,6 +136,7 @@ p, blockquote {
     overflow: hidden;
     
     color: #fff;
+    background-color: #fff;
     background-image: url(//lorempixel.com/400/200/technics);
     background-size: cover;
 }
