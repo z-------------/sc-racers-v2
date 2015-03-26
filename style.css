@@ -37,10 +37,15 @@ body {
     background-color: #f1f1f1;
     font-family: "Open Sans", sans-serif;
     font-size: 17px;
+    color: #333;
 }
 
 a {
     color: #FF3539;
+}
+
+a:hover {
+    box-shadow: 0 1px #FF3539;
 }
 
 h2, h3, h4, h5, h6 {;
@@ -165,7 +170,7 @@ p, blockquote {
     margin: 10px 0;
 }
 
-.shadow, .stream-container li {
+.shadow, .card, .stream-container li, .flex-box {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
@@ -175,14 +180,12 @@ p, blockquote {
 
 .flex-box {
     position: relative;
-    border-radius: 4px;
     flex-grow: 1;
     margin: 20px;
     padding: 20px;
     overflow: hidden;
     
     color: #fff;
-    background-color: #fff;
     background-size: cover;
 }
 
@@ -243,18 +246,46 @@ a.button:hover {
 
 .stream-container li {
     display: block;
-    background-color: #fff;
-    border-radius: 4px;
+    
     width: 300px;
     margin: 10px 0;
     padding: 20px;
 }
 
 .stream-container li p {
-    color: #333;
     margin-top: 0;
 }
 
 .stream-container date {
     font-size: 0.8em;
+}
+
+.card, .stream-container li, .flex-box {
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.card {
+    padding: 15px 25px;
+}
+
+p.subhead {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.3em;
+    color: rgba(0, 0, 0, .7);
+}
+
+.quote, blockquote {
+    position: relative;
+    margin-left: 20px;
+}
+
+.quote:before, blockquote:before {
+    content: "“";
+    font-size: 2em;
+    color: rgba(0, 0, 0, .3);
+    position: absolute;
+    top: -0.5em;
+    left: -0.5em;
 }
