@@ -105,12 +105,16 @@ nav {
 nav a {
     display: inline-block;
     padding: 10px 15px;
-    color: #fff;
+    color: rgba(255, 255, 255, .7);
     
     transition-property: color, background, box-shadow;
 }
 
 nav a:hover {
+    color: #fff;
+}
+
+nav a.current {
     box-shadow: 0 3px #fff;
 }
 
