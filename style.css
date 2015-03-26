@@ -185,11 +185,14 @@ p, blockquote {
     padding: 20px;
     overflow: hidden;
     
-    color: #fff;
     background-size: cover;
 }
 
-.flex-box:before {
+.flex-box.image-bg {
+    color: #fff;
+}
+
+.flex-box.image-bg:before {
     content: "";
     display: block;
     position: absolute;
