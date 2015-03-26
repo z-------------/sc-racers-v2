@@ -61,6 +61,7 @@ if (
 } else {
     xhr("https://dl.dropboxusercontent.com/u/57300365/SC%20Racers/Twitter/tweets.txt", function(r){
         r = r.split("\n \n ").reverse();
+        if (r.length > 50) r.length = 50;
 
         localStorage.setItem("twitterStreamData", JSON.stringify(r));
         localStorage.setItem("twitterStreamTime", new Date().getTime().toString());
