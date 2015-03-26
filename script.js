@@ -86,6 +86,7 @@ function changeSection(id){
             elem.classList.remove("current");
         });
         section.classList.add("current");
+        document.querySelector(".content-container").style.height = section.offsetHeight + "px";
     } else {
         console.log("couldn't find section '" + id + "'");
     }
