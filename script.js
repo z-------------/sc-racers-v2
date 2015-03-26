@@ -42,7 +42,15 @@ xhr("https://dl.dropboxusercontent.com/u/57300365/SC%20Racers/Twitter/tweets.txt
         var date = postArr[2];
         
         var postElem = document.createElement("li");
-        postElem.innerHTML = "<p>" + content + "</p>";
+        postElem.innerHTML = "<a href='" + url + "'><p>" + content + "</p><date>" + date + "</date></a>";
         newsStream.appendChild(postElem);
+    });
+    [].slice.call(newsStream.querySelectorAll("a")).forEach(function(elem){
+        elem.setAttribute("target", "_blank");
+    });
+    var twitterMsnry = new Masonry(newsStream, {
+        itemSelector: "li",
+        gutter: 20,
+        isFitWidth: true
     });
 });
