@@ -115,7 +115,7 @@ if (location.hash.length > 1) {
 
 var navOrigY = document.querySelector("nav").offsetTop;
 setInterval(function(){
-    if (window.scrollY > navOrigY) {
+    if (window.scrollY >= navOrigY) {
         document.body.classList.add("float-nav");
     } else {
         document.body.classList.remove("float-nav");

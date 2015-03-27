@@ -134,7 +134,7 @@ nav {
 }
 
 .float-nav .logo {
-    margin-bottom: 63px;
+    margin-bottom: calc(63px + 20px);
 }
 
 nav a {
