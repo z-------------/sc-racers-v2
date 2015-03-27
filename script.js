@@ -1,3 +1,9 @@
+/* constants */
+
+var MEMBER_PHOTOS_DIR = "/assets/img/members/";
+
+/* global functions */
+
 var xhr = function(url,callback) {
     var oReq = new XMLHttpRequest();
     oReq.onload = function(){
@@ -129,3 +135,12 @@ setInterval(function(){
         document.body.classList.remove("float-nav");
     }
 }, 50);
+
+/* dynamic member photos */
+
+[].slice.call(document.querySelectorAll(".members-container li")).forEach(function(elem){
+    var photoElem = elem.querySelector(".member-photo");
+    var name = elem.querySelector(".member-name").textContent;
+    
+    photoElem.src = MEMBER_PHOTOS_DIR + name + ".jpg";
+});
