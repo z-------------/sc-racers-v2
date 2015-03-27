@@ -27,55 +27,6 @@ var newsStream = document.querySelector(".stream-container");
     elem.dataset.id = toAttrCase(elem.querySelectorAll("h2")[0].textContent);
 });
 
-/* twitter stream */
-
-function displayTwitterPosts(data){
-    data.forEach(function(postStr){
-        var postArr = postStr.split("\n").filter(function(v){
-            return v.length > 0;
-        });
-        
-        var content = postArr[0];
-        var url = postArr[1];
-        var date = postArr[2];
-        
-        var postElem = document.createElement("li");
-        postElem.innerHTML = "<p>" + twttr.txt.autoLink(content) + "</p><a href='" + url + "'><date>" + date + "</date></a>";
-        newsStream.appendChild(postElem);
-    });
-    [].slice.call(newsStream.querySelectorAll("a")).forEach(function(elem){
-        elem.setAttribute("target", "_blank");
-    });
-    var twitterMsnry = new Masonry(newsStream, {
-        itemSelector: "li",
-        gutter: 20,
-        isFitWidth: true
-    });
-}
-
-if (
-    localStorage.getItem("twitterStreamData") && 
-    (new Date().getTime() - Number(localStorage.getItem("twitterStreamTime")) < 600000 /* 10 minutes */)
-) {
-    displayTwitterPosts(JSON.parse(localStorage.getItem("twitterStreamData")));
-} else {
-    xhr("https://dl.dropboxusercontent.com/u/57300365/SC%20Racers/Twitter/tweets.txt", function(r){
-        r = r.split("\n \n ").reverse();
-        if (r.length > 50) r.length = 50;
-
-        localStorage.setItem("twitterStreamData", JSON.stringify(r));
-        localStorage.setItem("twitterStreamTime", new Date().getTime().toString());
-
-        displayTwitterPosts(r);
-    });
-}
-
-/* background images from markup */
-
-[].slice.call(document.querySelectorAll("[data-bg]")).forEach(function(elem){
-    elem.style.backgroundImage = "url(" + elem.dataset.bg + ")";
-});
-
 /* section changing */
 
 function sizeContentContainer(section){
@@ -117,6 +68,56 @@ if (location.hash.length > 1) {
 } else {
     changeSection(document.querySelector("section").dataset.id);
 }
+
+/* twitter stream */
+
+function displayTwitterPosts(data){
+    data.forEach(function(postStr){
+        var postArr = postStr.split("\n").filter(function(v){
+            return v.length > 0;
+        });
+        
+        var content = postArr[0];
+        var url = postArr[1];
+        var date = postArr[2];
+        
+        var postElem = document.createElement("li");
+        postElem.innerHTML = "<p>" + twttr.txt.autoLink(content) + "</p><a href='" + url + "'><date>" + date + "</date></a>";
+        newsStream.appendChild(postElem);
+    });
+    [].slice.call(newsStream.querySelectorAll("a")).forEach(function(elem){
+        elem.setAttribute("target", "_blank");
+    });
+    var twitterMsnry = new Masonry(newsStream, {
+        itemSelector: "li",
+        gutter: 20,
+        isFitWidth: true
+    });
+    sizeContentContainer(document.querySelector("section.current"));
+}
+
+if (
+    localStorage.getItem("twitterStreamData") && 
+    (new Date().getTime() - Number(localStorage.getItem("twitterStreamTime")) < 600000 /* 10 minutes */)
+) {
+    displayTwitterPosts(JSON.parse(localStorage.getItem("twitterStreamData")));
+} else {
+    xhr("https://dl.dropboxusercontent.com/u/57300365/SC%20Racers/Twitter/tweets.txt", function(r){
+        r = r.split("\n \n ").reverse();
+        if (r.length > 50) r.length = 50;
+
+        localStorage.setItem("twitterStreamData", JSON.stringify(r));
+        localStorage.setItem("twitterStreamTime", new Date().getTime().toString());
+
+        displayTwitterPosts(r);
+    });
+}
+
+/* background images from markup */
+
+[].slice.call(document.querySelectorAll("[data-bg]")).forEach(function(elem){
+    elem.style.backgroundImage = "url(" + elem.dataset.bg + ")";
+});
 
 /* floaing nav bar */
 
