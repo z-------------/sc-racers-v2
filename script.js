@@ -110,3 +110,14 @@ if (location.hash.length > 1) {
 } else {
     changeSection(document.querySelector("section").dataset.id);
 }
+
+/* floaing nav bar */
+
+var navOrigY = document.querySelector("nav").offsetTop;
+setInterval(function(){
+    if (window.scrollY > navOrigY) {
+        document.body.classList.add("float-nav");
+    } else {
+        document.body.classList.remove("float-nav");
+    }
+}, 50);
