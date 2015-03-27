@@ -78,6 +78,10 @@ if (
 
 /* section changing */
 
+function sizeContentContainer(section){
+    document.querySelector(".content-container").style.height = section.offsetHeight + "px";
+}
+
 function changeSection(id){
     var section = document.querySelector("[data-id='" + id + "']");
     var link = document.querySelector("nav a[href='#" + id + "']");
@@ -87,7 +91,8 @@ function changeSection(id){
             elem.classList.remove("current");
         });
         section.classList.add("current");
-        document.querySelector(".content-container").style.height = section.offsetHeight + "px";
+        sizeContentContainer(section);
+        window.scrollTo(0, navOrigY);
     } else {
         console.log("couldn't find section '" + id + "'");
     }
