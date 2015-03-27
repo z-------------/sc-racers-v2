@@ -42,10 +42,19 @@ function sizeContentContainer(section){
 function changeSection(id){
     var section = document.querySelector("[data-id='" + id + "']");
     var link = document.querySelector("nav a[href='#" + id + "']");
+    var sections = [].slice.call(document.querySelectorAll("section"));
     
     if (section) {
-        [].slice.call(document.querySelectorAll("section")).forEach(function(elem){
+        sections.forEach(function(elem){
             elem.classList.remove("current");
+            elem.classList.remove("left");
+            elem.classList.remove("right");
+            
+            if (sections.indexOf(elem) < sections.indexOf(section)) {
+                elem.classList.add("left");
+            } else if (sections.indexOf(elem) > sections.indexOf(section)) {
+                elem.classList.add("right");
+            }
         });
         section.classList.add("current");
         

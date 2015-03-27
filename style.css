@@ -177,17 +177,27 @@ section {
     text-align: center;
     
     position: absolute;
-    left: 0;
     top: 0;
     width: 100%;
     
     opacity: 0;
     pointer-events: none;
+    
+    transition-property: left, opacity;
 }
 
 section.current {
     opacity: 1;
     pointer-events: auto;
+    left: 0;
+}
+
+section.left {
+    left: -100%;
+}
+
+section.right {
+    left: 100%;
 }
 
 section > * {
