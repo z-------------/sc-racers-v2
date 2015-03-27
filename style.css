@@ -59,12 +59,15 @@ h2, h3, h4, h5, h6 {;
 h2 {
     font-size: 1.5em;
     margin: 10px auto;
-    margin-top: 20px;
     display: inline-block;
     text-align: center;
     background-color: #FF3539;
     color: #fff;
     padding: 5px 10px;
+}
+
+section > h2 {
+    margin-top: 20px;
 }
 
 h3 {
@@ -311,7 +314,11 @@ a.button:hover {
 
 .card {
     padding: 15px 25px;
-    margin: 10px;
+    margin: 20px 10px;
+}
+
+.card:first-of-type {
+    margin-top: 10px;
 }
 
 p.subhead {
@@ -334,4 +341,38 @@ p.subhead {
     position: absolute;
     top: -0.5em;
     left: -0.5em;
+}
+
+.members-container li {
+    display: inline-block;
+    width: 500px;
+    padding: 20px;
+    vertical-align: top;
+}
+
+.member-name, .member-role {
+    line-height: 1;
+}
+
+.member-name {
+    font-size: 1.5em;
+}
+
+.member-role {
+    color: rgba(0, 0, 0, .6);
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.member-photo {
+    background-color: gray;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 20px;
+}
+
+.member-bio {
+    margin-top: 20px;
 }
