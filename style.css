@@ -45,7 +45,7 @@ a {
 }
 
 a:hover {
-    box-shadow: 0 1px #FF3539;
+    box-shadow: inset 0 -1px #FF3539;
 }
 
 h2, h3, h4, h5, h6 {;
@@ -123,14 +123,21 @@ nav {
     display: flex;
     justify-content: center;
     
-    transition-property: box-shadow;
+    transition-property: box-shadow, padding;
 }
 
 .float-nav nav {
     position: fixed;
     left: 0;
     top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.float-nav nav a {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .float-nav .logo {
@@ -143,7 +150,7 @@ nav a {
     margin: 0 15px;
     color: rgba(255, 255, 255, .7);
     
-    transition-property: color, background, box-shadow;
+    transition-property: color, background, box-shadow, padding;
 }
 
 nav a:hover, nav a.current {
@@ -151,7 +158,7 @@ nav a:hover, nav a.current {
 }
 
 nav a.current {
-    box-shadow: 0 2px #fff;
+    box-shadow: inset 0 -2px #fff;
 }
 
 .content-container {
