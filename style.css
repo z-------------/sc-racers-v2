@@ -32,6 +32,11 @@
     }
 }
 
+::selection {
+    background-color: #FF3539;
+    color: #fff;
+}
+
 body {
     box-sizing: border-box;
     background-color: #f1f1f1;
