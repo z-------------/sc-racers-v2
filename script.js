@@ -91,8 +91,10 @@ function changeSection(id){
             elem.classList.remove("current");
         });
         section.classList.add("current");
+        
         sizeContentContainer(section);
-        window.scrollTo(0, navOrigY);
+        
+        if (window.scrollY > navOrigY) window.scrollTo(0, navOrigY);
     } else {
         console.log("couldn't find section '" + id + "'");
     }
