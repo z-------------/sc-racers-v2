@@ -162,9 +162,12 @@ setInterval(function(){
         var svgDoc = logoElem.contentDocument;
         var styleElem = svgDoc.createElementNS("http://www.w3.org/2000/svg", "style");
 
-        styleElem.textContent = "svg:hover #logo {\
-transform: rotate(1turn);\
+        styleElem.textContent = "#logo {\
+transform: rotate(0);\
 transform-origin: 57% 50%;\
+}\
+svg:hover #logo {\
+transform: rotate(1turn);\
 transition: transform 1s;\
 }";
         svgDoc.querySelector("svg").appendChild(styleElem);
