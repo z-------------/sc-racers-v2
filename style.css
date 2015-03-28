@@ -93,33 +93,9 @@ header {
 }
 
 .logo {
-    font-family: "Anton", sans-serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 7em;
-    line-height: 1;
+    background-image: url(/assets/img/logo-text.svg);
+    width: 600px;
     margin: 20px 0;
-    cursor: default;
-}
-
-.logo:before {
-    content: "";
-    
-    display: inline-block;
-    vertical-align: middle;
-    width: 1.2em;
-    height: 1.2em;
-    
-    background-image: url(/assets/img/logo.svg);
-    background-size: contain;
-    
-    -webkit-transform-origin: calc(50% + 6px) 50%;
-    transform-origin: calc(50% + 6px) 50%;
-}
-
-.logo:hover:before {
-    -webkit-animation: logoSpin 1s;
-    animation: logoSpin 1s;
 }
 
 nav {
