@@ -153,3 +153,20 @@ setInterval(function(){
     
     photoElem.src = MEMBER_PHOTOS_DIR + name + ".jpg";
 });
+
+/* spinning logo on hover */
+
+(function(){
+    var logoElem = document.querySelector(".logo");
+    logoElem.addEventListener("load", function(){
+        var svgDoc = logoElem.contentDocument;
+        var styleElem = svgDoc.createElementNS("http://www.w3.org/2000/svg", "style");
+
+        styleElem.textContent = "svg:hover #g4195 {\
+transform: rotate(1turn);\
+transform-origin: 57% 50%;\
+transition: transform 1s;\
+}";
+        svgDoc.querySelector("svg").appendChild(styleElem);
+    });
+})();

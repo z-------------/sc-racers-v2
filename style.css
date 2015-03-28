@@ -14,24 +14,6 @@
     background-size: cover;
 }
 
-@-webkit-keyframes logoSpin {
-    from {
-        -webkit-transform: rotate(0);
-    }
-    to {
-        -webkit-transform: rotate(1turn);
-    }
-}
-
-@keyframes logoSpin {
-    from {
-        -webkit-transform: rotate(0);
-    }
-    to {
-        -webkit-transform: rotate(1turn);
-    }
-}
-
 ::selection {
     background-color: #FF3539;
     color: #fff;
@@ -93,7 +75,6 @@ header {
 }
 
 .logo {
-    background-image: url(/assets/img/logo-text.svg);
     width: 600px;
     margin: 20px 0;
 }
