@@ -238,10 +238,13 @@ a.button {
     border: solid 1px #FF3539;
     border-radius: 4px;
     font-size: 0.9em;
-    color: #fff;
     box-shadow: none;
     
     transition-property: background, color;
+}
+
+.flex-box.image-bg a.button {
+    color: #fff;
 }
 
 a.button:after {
@@ -257,6 +260,7 @@ a.button:after {
 
 a.button:hover {
     background-color: #FF3539;
+    color: #fff;
 }
 
 .stream-container {
