@@ -142,14 +142,12 @@ section {
     top: 0;
     width: 100%;
     
-    opacity: 0;
     pointer-events: none;
     
-    transition-property: left, opacity;
+    transition-property: left;
 }
 
 section.current {
-    opacity: 1;
     pointer-events: auto;
     left: 0;
 }
