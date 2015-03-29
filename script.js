@@ -1,6 +1,7 @@
 /* constants */
 
 var MEMBER_PHOTOS_DIR = "/assets/img/members/";
+var GALLERY_RATIO = 16/9;
 
 /* global functions */
 
@@ -127,6 +128,20 @@ if (
         displayTwitterPosts(r);
     });
 }
+
+/* gallery */
+
+[].slice.call(document.querySelectorAll(".gallery-container")).forEach(function(container){
+    var imgElems = container.querySelectorAll("img");
+    var imgs = [];
+    [].slice.call(imgElems).forEach(function(imgElem){
+        var title = imgElem.dataset.title;
+        var description = imgElem.dataset.description;
+        imgElem.outerHTML = "<div class='gallery-img' data-bg='" + imgElem.src + "'></div>";
+        if (title) imgElem.innerHTML += "<span>" + title + "</span>";
+        if (description) imgElem.innerHTML += "<span>" + description + "</span>";
+    });
+});
 
 /* background images from markup */
 
