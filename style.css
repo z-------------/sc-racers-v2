@@ -482,3 +482,22 @@ p.subhead {
     right: 30px;
     background-image: url(/assets/img/ui/rarr-gallery.svg);
 }
+
+@media only screen and (max-width: 720px) {
+    section {
+        padding: 50px 10px;
+    }
+    
+    .flex-container {
+        display: block;
+    }
+    
+    .flex-box {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    .stream-container li {
+        width: 100%;
+    }
+}
