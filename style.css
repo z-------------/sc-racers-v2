@@ -80,6 +80,7 @@ header {
 
 .logo {
     width: 600px;
+    max-width: calc(100% - 50px);
     margin: 20px 0;
 }
 
@@ -484,6 +485,10 @@ p.subhead {
 }
 
 @media only screen and (max-width: 720px) {
+    header {
+        padding-top: 20px;
+    }
+    
     section {
         padding: 50px 10px;
     }
