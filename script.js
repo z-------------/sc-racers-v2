@@ -36,7 +36,8 @@ var newsStream = document.querySelector(".stream-container");
 
 /* section changing */
 
-function sizeContentContainer(section){
+function sizeContentContainer(){
+    var section = document.querySelector("section.current");
     document.querySelector(".content-container").style.height = section.offsetHeight + "px";
 }
 
@@ -59,7 +60,7 @@ function changeSection(id){
         });
         section.classList.add("current");
         
-        sizeContentContainer(section);
+        sizeContentContainer();
         
         if (window.scrollY > navOrigY) window.scrollTo(0, navOrigY);
     } else {
@@ -109,7 +110,7 @@ function displayTwitterPosts(data){
         gutter: 20,
         isFitWidth: true
     });
-    sizeContentContainer(document.querySelector("section.current"));
+    sizeContentContainer();
 }
 
 if (
@@ -169,7 +170,7 @@ if (
         
         elem.style.height = parseInt(getComputedStyle(elem).getPropertyValue("width")) * 1/GALLERY_RATIO + "px";
         
-        sizeContentContainer(document.querySelector("section.current"));
+        sizeContentContainer();
     });
 });
 
