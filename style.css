@@ -352,6 +352,7 @@ p.subhead {
     width: 500px;
     padding: 20px;
     vertical-align: top;
+    max-width: 100%;
 }
 
 .member-name, .member-role {
@@ -504,5 +505,9 @@ p.subhead {
     
     .stream-container li {
         width: 100%;
+    }
+    
+    .members-container li {
+        padding: 20px 0;
     }
 }
