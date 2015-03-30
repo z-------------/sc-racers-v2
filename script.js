@@ -151,6 +151,8 @@ if (
         
         container.removeChild(imgElem);
         container.appendChild(elem);
+        
+        sizeContentContainer(document.querySelector("section.current"));
     });
 });
 

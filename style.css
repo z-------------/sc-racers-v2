@@ -382,14 +382,9 @@ p.subhead {
 }
 
 .gallery-img {
-    width: 100%;
-    overflow: hidden;
     position: absolute;
-}
-
-.gallery-img img {
     width: 100%;
-    position: absolute;
     left: 0;
     top: 0;
+    overflow: hidden;
 }
