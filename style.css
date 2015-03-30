@@ -359,6 +359,7 @@ p.subhead {
 
 .member-name {
     font-size: 1.5em;
+    margin-top: 25px;
 }
 
 .member-role {
@@ -369,15 +370,17 @@ p.subhead {
 }
 
 .member-photo {
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     float: left;
     margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .member-bio {
     margin-top: 20px;
+    clear: both;
 }
 
 .gallery-container {
