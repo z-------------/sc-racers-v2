@@ -43,6 +43,10 @@ h2, h3, h4, h5, h6 {;
     display: none;
 }
 
+.hidden {
+    opacity: 0;
+}
+
 h2 {
     font-size: 1.5em;
     margin: 10px auto;
@@ -392,6 +396,16 @@ p.subhead {
     overflow: hidden;
     border-radius: 4px;
     background-color: #fff;
+    
+    transition-property: left;
+}
+
+.gallery-img.left {
+    left: calc(-100% + 80px);
+}
+
+.gallery-img.right {
+    left: calc(100% - 80px);
 }
 
 .gallery-img-info {
@@ -403,6 +417,12 @@ p.subhead {
     position: absolute;
     left: 0;
     bottom: 0;
+    
+    transition-property: opacity;
+}
+
+.gallery-img.left .gallery-img-info, .gallery-img.right .gallery-img-info {
+    opacity: 0;
 }
 
 .gallery-img-info:after {
@@ -423,6 +443,7 @@ p.subhead {
     font-weight: 600;
     display: block;
     margin-bottom: 5px;
+    font-style: italic;
 }
 
 .gallery-control {
@@ -438,7 +459,7 @@ p.subhead {
     background-size: 25px;
     z-index: 1;
     
-    transition-property: box-shadow;
+    transition-property: box-shadow, opacity;
 }
 
 .gallery-control:focus {
