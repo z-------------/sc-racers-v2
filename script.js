@@ -177,13 +177,13 @@ setInterval(function(){
         var svgDoc = logoElem.contentDocument;
         var styleElem = svgDoc.createElementNS("http://www.w3.org/2000/svg", "style");
 
-        styleElem.textContent = "#logo {\
+        styleElem.textContent = "#logo-rings {\
 transform: rotate(0);\
-transform-origin: 57% 50%;\
+transform-origin: 58.5% 50%;\
 }\
-svg:hover #logo {\
-transform: rotate(1turn);\
-transition: transform 1s;\
+svg:hover #logo-rings {\
+transform: rotate(10turn);\
+transition: transform 3s;\
 }";
         svgDoc.querySelector("svg").appendChild(styleElem);
     });
