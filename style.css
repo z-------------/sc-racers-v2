@@ -160,15 +160,21 @@ section {
     position: absolute;
     top: 0;
     width: 100%;
+    opacity: 0;
     
     pointer-events: none;
     
-    transition-property: left;
+    transition-property: left, opacity;
+    transition-duration: .3s, 0;
+    transition-delay: 0, .3s;
 }
 
 section.current {
     pointer-events: auto;
     left: 0;
+    opacity: 1;
+    
+    transition-property: left;
 }
 
 section.left {
