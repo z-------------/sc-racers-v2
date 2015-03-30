@@ -132,14 +132,25 @@ if (
 /* gallery */
 
 [].slice.call(document.querySelectorAll(".gallery-container")).forEach(function(container){
+    container.style.height = window.innerWidth * 1/GALLERY_RATIO + "px";
     var imgElems = container.querySelectorAll("img");
     var imgs = [];
     [].slice.call(imgElems).forEach(function(imgElem){
         var title = imgElem.dataset.title;
         var description = imgElem.dataset.description;
-        imgElem.outerHTML = "<div class='gallery-img' data-bg='" + imgElem.src + "'></div>";
-        if (title) imgElem.innerHTML += "<span>" + title + "</span>";
-        if (description) imgElem.innerHTML += "<span>" + description + "</span>";
+        
+        var elem = document.createElement("div");
+        elem.classList.add("gallery-img");
+        elem.dataset.bg = imgElem.src;
+        
+        if (title) elem.innerHTML += "<span>" + title + "</span>";
+        if (description) elem.innerHTML += "<span>" + description + "</span>";
+        
+        elem.style.width = window.innerWidth + "px";
+        elem.style.height = window.innerWidth * 1/GALLERY_RATIO + "px";
+        
+        container.removeChild(imgElem);
+        container.appendChild(elem);
     });
 });
 

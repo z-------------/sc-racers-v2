@@ -369,3 +369,21 @@ p.subhead {
 .member-bio {
     margin-top: 20px;
 }
+
+.gallery-container {
+    position: relative;
+    width: 100%;
+}
+
+.gallery-img {
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+}
+
+.gallery-img img {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
