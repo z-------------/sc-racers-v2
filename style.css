@@ -510,4 +510,14 @@ p.subhead {
     .members-container li {
         padding: 20px 0;
     }
+    
+    nav {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    nav:before {
+        display: none;
+    }
 }
