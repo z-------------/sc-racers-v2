@@ -378,12 +378,15 @@ p.subhead {
 
 .gallery-container {
     position: relative;
-    width: 100%;
+    width: calc(100% + 90px);
+    margin-left: -45px;
 }
 
 .gallery-img {
     position: absolute;
-    width: 100%;
+    width: calc(100% - 110px);
+    margin-left: 55px;
+    margin-top: 25px;
     left: 0;
     top: 0;
     overflow: hidden;

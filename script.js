@@ -146,11 +146,10 @@ if (
         if (title) elem.innerHTML += "<span>" + title + "</span>";
         if (description) elem.innerHTML += "<span>" + description + "</span>";
         
-        elem.style.width = window.innerWidth + "px";
-        elem.style.height = window.innerWidth * 1/GALLERY_RATIO + "px";
-        
         container.removeChild(imgElem);
         container.appendChild(elem);
+        
+        elem.style.height = parseInt(getComputedStyle(elem).getPropertyValue("width")) * 1/GALLERY_RATIO + "px";
         
         sizeContentContainer(document.querySelector("section.current"));
     });
