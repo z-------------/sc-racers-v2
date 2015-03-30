@@ -143,8 +143,13 @@ if (
         elem.classList.add("gallery-img");
         elem.dataset.bg = imgElem.src;
         
-        if (title) elem.innerHTML += "<span>" + title + "</span>";
-        if (description) elem.innerHTML += "<span>" + description + "</span>";
+        if (title || description) elem.innerHTML += "<div class='gallery-img-info'></div>";
+        if (title) {
+            elem.querySelector(".gallery-img-info").innerHTML += "<span class='gallery-img-title'>" + title + "</span>";
+        }
+        if (description) {
+            elem.querySelector(".gallery-img-info").innerHTML += "<span class='gallery-img-description'>" + description + "</span>";
+        }
         
         container.removeChild(imgElem);
         container.appendChild(elem);

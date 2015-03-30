@@ -391,4 +391,36 @@ p.subhead {
     top: 0;
     overflow: hidden;
     border-radius: 4px;
+    background-color: #fff;
+}
+
+.gallery-img-info {
+    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
+    max-width: 300px;
+    padding: 10px 20px;
+    margin: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.gallery-img-info:after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 0;
+    
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 25px 25px 0 0;
+    border-color: rgba(0, 0, 0, .5) transparent transparent transparent;
+}
+
+.gallery-img-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
 }
