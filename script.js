@@ -132,6 +132,7 @@ if (
 /* gallery */
 
 [].slice.call(document.querySelectorAll(".gallery-container")).forEach(function(container){
+    container.innerHTML += "<button class='gallery-control prev'></button><button class='gallery-control next'></button>";
     container.style.height = window.innerWidth * 1/GALLERY_RATIO + "px";
     var imgElems = container.querySelectorAll("img");
     var imgs = [];
