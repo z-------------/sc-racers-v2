@@ -435,6 +435,7 @@ p.subhead {
     margin-top: -25px;
     border: none;
     cursor: pointer;
+    background-size: 25px;
     z-index: 1;
     
     transition-property: box-shadow;
@@ -450,8 +451,10 @@ p.subhead {
 
 .gallery-control.prev {
     left: 30px;
+    background-image: url(/assets/img/ui/larr-gallery.svg);
 }
 
 .gallery-control.next {
     right: 30px;
+    background-image: url(/assets/img/ui/rarr-gallery.svg);
 }
