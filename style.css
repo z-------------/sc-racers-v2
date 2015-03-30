@@ -87,6 +87,7 @@ nav {
     background-color: inherit;
     display: flex;
     justify-content: center;
+    overflow: hidden;
     
     transition-property: padding;
 }
@@ -132,19 +133,18 @@ nav:before {
     content: "";
     display: block;
     position: absolute;
-    left: -50px;
-    top: 0;
+    left: 0;
+    bottom: -70px;
     width: 50px;
     height: 50px;
+    margin: 7px 10px;
     background-image: url(/assets/img/logo-red-padded.svg);
-    opacity: 0;
     
-    transition-property: opacity, left;
+    transition-property: bottom;
 }
 
 .float-nav nav:before {
-    left: 0;
-    opacity: 1;
+    bottom: 0;
 }
 
 .content-container {
